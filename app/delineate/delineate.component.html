@@ -1,0 +1,177 @@
+<div class="row row1">
+  <ng4-loading-spinner [template]="template" [timeout]="100000000" [loadingText]="'Please wait...'" [zIndex]="500">
+  </ng4-loading-spinner>
+  <div class="col-md-1 col-s-1">
+
+  </div>
+  <div class="col-md-4 col-s-4">
+    <div class="card">
+      <img class="card-img-top" src="assets/img/recruitment.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">Personality Delineate</h4>
+        <input type="text" placeholder="Enter twitter Id" [(ngModel)]="credentials.id" style="font-size: 15px;">
+        <br><br>
+        <button class="btn btn-primary" (click)="getDelineateTableData()" style="font-size: 15px;">Submit</button>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-md-1 col-s-1">
+
+    </div> -->
+
+  <div class="col-md-6 col-s-6">
+    <br>
+    <p style="font: 1.2vw Georgia, serif;color: white;">
+      <span style="padding:12px;padding-left: 25px;">O - Openness</span>
+      <span style="padding:12px;">C - Conscientiousness</span>
+      <span style="padding:12px;">E - Extraversion</span><br><br>
+      <span style="padding:12px;padding-left: 100px;">A - Agreeableness </span>
+      <span style="padding:12px;">N - Neuroticism</span>
+    </p><br>
+    <mat-accordion>
+      <mat-expansion-panel class="panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="text">O : {{ percentO }}</mat-panel-title>
+          <mat-panel-description style="font-size: 20px; text-align:justify">
+            <mat-progress-bar class="bar" mode="determinate" [value]="percentO">
+            </mat-progress-bar>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <canvas baseChart #baseChartO="base-chart" [datasets]="barChartDataO" [labels]="barChartLabelsO"
+          [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="ColorsO">
+        </canvas>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="panel" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="text">C : {{ percentC }}</mat-panel-title>
+          <mat-panel-description style="font-size: 20px; text-align: justify">
+            <mat-progress-bar class="bar" mode="determinate" [value]="percentC"></mat-progress-bar>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <canvas baseChart #baseChartC="base-chart" [datasets]="barChartDataC" [labels]="barChartLabelsC"
+          [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="ColorsC">
+        </canvas>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="panel" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="text">E : {{ percentE }}</mat-panel-title>
+          <mat-panel-description style="font-size: 20px; text-align: justify">
+            <mat-progress-bar class="bar" mode="determinate" [value]="percentE"></mat-progress-bar>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <canvas baseChart #baseChartE="base-chart" [datasets]="barChartDataE" [labels]="barChartLabelsE"
+          [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="ColorsE">
+        </canvas>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="panel" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="text">A : {{ percentA }}</mat-panel-title>
+          <mat-panel-description style="font-size: 20px; text-align: justify">
+            <mat-progress-bar class="bar" mode="determinate" [value]="percentA"></mat-progress-bar>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <canvas baseChart #baseChartA="base-chart" [datasets]="barChartDataA" [labels]="barChartLabelsA"
+          [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="ColorsA">
+        </canvas>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="panel" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="text">N : {{ percentN }}</mat-panel-title>
+          <mat-panel-description style="font-size: 20px; text-align: justify">
+            <mat-progress-bar class="bar" mode="determinate" [value]="percentN"></mat-progress-bar>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <canvas baseChart #baseChartN="base-chart" [datasets]="barChartDataN" [labels]="barChartLabelsN"
+          [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="ColorsN">
+        </canvas>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </div>
+</div>
+<div style="background-image: url('assets/img/background_carousel.jpg');padding-bottom: 100px;">
+  <h1 class="heading2" style="padding-top:20px;">
+      For more details <span class="glyphicon glyphicon-hand-down"
+      style="padding-top:3px;"></span>
+  </h1>
+
+  <div class="container container2">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="item active" style="text-align: center;">
+
+          <div class="header-text">
+            <ul>
+              <h2>Openness Potrays</h2>
+              <li class="textC" *ngFor="let item of open;" style="padding-top:15px;">{{item}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="item" style="text-align: center;">
+
+          <div class="header-text">
+            <ul>
+              <h2>Conscientiousness Depicts </h2>
+              <li class="textC" *ngFor="let item of conscientious;">{{item}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="item" style="text-align: center;">
+
+          <div class="header-text">
+            <ul>
+              <h2>Extraversion Represents</h2>
+              <li class="textC" *ngFor="let item of extraversion;">{{item}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="item" style="text-align: center;">
+
+          <div class="header-text">
+            <ul>
+              <h2>Agreeableness Illustrates</h2>
+              <li class="textC" *ngFor="let item of agreeable;">{{item}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="item" style="text-align: center;">
+
+          <div class="header-text">
+            <ul>
+              <h2>Neuroticism Unfolds</h2>
+              <li class="textC" *ngFor="let item of neuroticism;">{{item}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+</div>

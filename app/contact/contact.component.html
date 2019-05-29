@@ -1,0 +1,27 @@
+<div style="background:url('assets/img/img6.png');padding-bottom:80px;overflow: hidden;">
+  <div style="text-align:center;">
+    <h2>Contact Us <span class="glyphicon glyphicon-user"></span> </h2>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="/assets/img/logo.png" width="400px" height="400px">
+    </div>
+    <div class="column">
+      <form [formGroup]="contactForm" (submit)="onSubmit()" id = "TechnoPanditContact">
+        <div class="form-group">
+          <label for="inputName4" class = "text">Full Name</label>
+          <input type="text" [formControl]="cname" class="form-control text" placeholder="Full Name" name = "user_name">
+          <label for="inputEmail4" class = "text">Email</label>
+          <input type="email" [formControl]="cemail" class="form-control text" placeholder="Email" name = "from_name">
+          <br>
+          <label for="inputPhone4" class = "text">Contact Number</label>
+          <input type="number" [formControl]="cnumber" class="form-control text" placeholder="Contact Number">
+          <br>
+          <label for="subject"  class="text">Subject</label>
+          <textarea class="text" [formControl]="csubject" class="form-control text" placeholder="Write your message here..." style="height:140px"  name="message_html"></textarea>
+          <input type="submit" class = "text" value="Submit">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

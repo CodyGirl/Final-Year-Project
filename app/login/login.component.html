@@ -1,0 +1,30 @@
+<div class="login-page">
+  <div class="form1">
+    <div class="container" style = "background:white;">
+      <form [formGroup]="loginForm" (submit)="onSubmit()">
+        <div class="form-group">
+          <label style="padding-top:30px;">User Name</label>
+          <input type="text" formControlName="uname" [(ngModel)]="credentials.uname" class="form-control" [ngClass]="{ 'is-invalid': submitted && formValidation.uname.errors }" style="width:340px"/>
+          <div *ngIf="submitted && formValidation.uname.errors" class="invalid-feedback">
+            <div *ngIf="formValidation.uname.errors.required" class="error">Username is required</div>
+          </div>
+          <div class="error">{{ invaliduname }}</div>
+          <label>Password</label>
+
+          <show-hide-password size = "lg" btnStyle = "primary" [btnOutline] = "false">
+            <input type="password" formControlName="password" [(ngModel)]="credentials.psw" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formValidation.password.errors }" />
+          </show-hide-password>
+
+          <div *ngIf="submitted && formValidation.password.errors" class="invalid-feedback">
+            <div *ngIf="formValidation.password.errors.required" class="error">Password is required</div>
+          </div>
+          <div class="error">{{ invalidpwd }}</div>
+          <button class="btn btn-primary">Login</button>
+        </div>
+      </form>
+      <p class="message" style="font-size: 18px;">&nbsp;&nbsp;&nbsp;Not Registered? <a routerLink="/register">Register</a></p>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

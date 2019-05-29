@@ -1,0 +1,51 @@
+.card-deck{
+  padding: 100px 80px 30px 80px;
+}
+.background1{
+  background: url("/assets/img/img6.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.card-title{
+  font: bold;
+  font-size: 25px;
+  font-weight: 500px;
+  width: 100%;
+  text-align: center;
+}
+.PersonalityTraits{
+  line-height:2.5vw;
+}
+.row{
+  padding: 0px 70px 30px 70px;
+}
+
+.leftmove {
+  -webkit-animation: mymoveL 8s;
+  animation: mymoveL 8s;
+}
+
+@-webkit-keyframes mymoveL {
+  from {left: -400px;}
+  to {left: 0px;}
+}
+
+@keyframes mymoveL {
+  from {left: -400px;}
+  to {left: 0px;}
+}
+
+.rightmove {
+  -webkit-animation: mymoveR 8s;
+  animation: mymoveR 8s;
+}
+
+@-webkit-keyframes mymoveR {
+  from {right: -400px;}
+  to {right: 0px;}
+}
+
+@keyframes mymoveR {
+  from {right: -400px;}
+  to {right: 0px;}
+}

@@ -1,0 +1,15 @@
+
+.navbar{
+  margin-bottom: 0px;
+  left:0;
+  border-radius: 0px;
+  background-color: #00001a;
+  position: fixed;
+  color: white;
+  width:100%;
+}
+
+a {
+  text-decoration:none;
+  color: white;
+}

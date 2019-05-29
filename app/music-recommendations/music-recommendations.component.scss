@@ -1,0 +1,36 @@
+.card-body{
+    text-align: center;
+}
+input{
+    width: 100%;
+}
+button{
+    width: 100% ;
+}
+.row{
+    padding: 5% 4% 10% 4% ;
+    background-image: url("/assets/img/Picture1.png");
+    background-size:cover; 
+}
+.card{
+   margin-right: 50px;
+   margin-top: 12% !important;
+}
+.gridStyle{
+    height: 1000px;
+}
+.heading{
+    font-family: "Garamond";
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+ag-grid-angular{
+    font-family: "Arial";
+}
+:host ::ng-deep .custom-spinner-template {
+    /* height: 50% !important;
+    width: 50% !important; */
+    top: 40% !important;
+    left: 45% !important;
+}

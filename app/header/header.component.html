@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top rounded" [ngStyle]="myStyles">
+  <img src="assets/img/logo.png" width="40" height="40" class="img-responsive logo">
+  <a class="navbar-brand" routerLink="/" routerLinkActive="is-active"><strong>TechnoPandit</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li><a class="nav-item nav-link" routerLink="/" routerLinkActive="is-active"><strong>Home</strong></a></li>
+      <div class="dropdown">
+        <li class="nav-item nav-link dropbtn"><strong>Recommendations&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+          <div class = "dropdown-content" >
+            <a routerLink="/movie"><strong>Movie</strong></a>
+            <a routerLink="/music"><strong>Music</strong></a>
+            <a routerLink="/job"><strong>Job</strong></a>
+            <a routerLink="/book"><strong>Book</strong></a>
+          </div>
+        </li>
+      </div>
+      <li>
+        <a routerLink="/delineate" class="nav-item nav-link" routerLinkActive="is-active"><strong>Personality Delineate</strong></a>
+      </li>
+      <li>
+        <a routerLink="/login" class="nav-item nav-link" routerLinkActive="is-active">
+          <span class="login" *ngIf="!auth.isLoggednIn()"><strong><span class="glyphicon glyphicon-log-in"></span> Login</strong></span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" class="nav-item nav-link" routerLinkActive="is-active">
+          <span class="logout" *ngIf="auth.isLoggednIn()" (click)="auth.logout()"><strong>Logout</strong></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
